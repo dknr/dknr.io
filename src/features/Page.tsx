@@ -3,16 +3,16 @@ import React from "react"
 import { createStyles, makeStyles, Theme, ThemeProvider } from "@material-ui/core/styles"
 import { PageHeader } from "./PageHeader"
 import "fontsource-overpass";
-import { deepOrange, teal } from "@material-ui/core/colors"
+import { deepOrange, orange, teal } from "@material-ui/core/colors"
 import {Helmet} from "react-helmet"
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   '@global': {
     'a': {
-      color: theme.palette.primary.light,
+      color: deepOrange["500"],
     },
     'a:visited': {
-      color: theme.palette.primary.dark,
+      color: orange["500"],
     }
   },
   content: {

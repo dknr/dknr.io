@@ -1,3 +1,6 @@
+.idea
+.cache
+
 # Logs
 logs
 *.log

@@ -1,0 +1,3 @@
+[submodule "src/pages/media/games/flatlander"]
+	path = static/media/games/flatlander
+	url = https://github.com/dknr/flatlander
