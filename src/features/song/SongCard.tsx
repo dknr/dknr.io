@@ -13,9 +13,11 @@ export type MusicCardProps = {
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   root: {
-    "&:hover": {
-      textDecoration: "underline"
-    }
+  },
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+    },
   },
   cover: {
     height: 240
@@ -29,7 +31,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     display: 'flex',
     alignItems: 'center',
     verticalAlign: 'center',
-    justifyContent: 'right',
+    textDecoration: 'underline',
+    filter: 'drop-shadow(0px 0px 7px #110000)'
   },
   hintIcon: {
     zIndex: 1,
@@ -48,7 +51,7 @@ export const SongCard = ({ song, onClick }: MusicCardProps) => {
   }, [song, onClick])
 
   return (
-    <Link href={youtubeUrl(song.youtube)} target={"_blank"}>
+    <Link href={youtubeUrl(song.youtube)} target={"_blank"} className={classes.link}>
       <Card className={classes.root} onClick={handleClick}>
         <CardMedia
           className={classes.cover}
@@ -56,8 +59,8 @@ export const SongCard = ({ song, onClick }: MusicCardProps) => {
           title={`${song.title} album cover`}
         >
           <Typography className={classes.hint}>
-            Play on YouTube
             <OpenInNew className={classes.hintIcon}/>
+            Play on YouTube
           </Typography>
         </CardMedia>
         <CardContent>
